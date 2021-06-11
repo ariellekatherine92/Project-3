@@ -22,7 +22,7 @@ and to locate local attractions in their current area. Click here for the link f
 
 Of course, in the beginning of every project everyone wants the world and everyone has great ideas. What is truly achievable and what we want want are usually two
 very different concepts. Below is how we narrowed down our goals to create a more cohesive flow throughout our front and back ends. 
-![cohesive]()
+![cohesive](https://github.com/ariellekatherine92/Project-3-front-end/blob/main/Photos/cohesive.png?raw=true)
 
 
 
