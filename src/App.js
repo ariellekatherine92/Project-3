@@ -13,6 +13,7 @@ import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import About from './components/About';
+import Home from './pages/Home';
 import Search from './pages/Search';
 // Private route component
 
@@ -63,14 +64,14 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route path="/" exact component={Welcome} />
+        <Route path="/" exact component={Home} />
         <Route path='/login' 
                 render={ (props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} /> } />
         <Route path="/signup" exact component={Signup} />
         <Route path="/search/:type" component={Search} />
-        <PrivateRoute path='/profile' component={ Profile } user={currentUser} handleLogout={handleLogout} />
+        <PrivateRoute path='/profile' component={Profile} user={currentUser} handleLogout={handleLogout} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

@@ -3,9 +3,9 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
-}
+/* body {
+  margin-bottom: 60px;
+} */
 
 .error {
   color: #cc0000;

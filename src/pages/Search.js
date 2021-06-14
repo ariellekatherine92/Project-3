@@ -3,12 +3,14 @@ import axios from 'axios';
 import { LocationForm, BusinessesList, LinkBackHome } from '../components';
 import { HEADERS, CORS_HACK, YELP_SEARCH_URL } from '../utils/yelp';
 
-const Hotels = props => {
+import './search.css';
+
+const Search = props => {
     const { match: { params: { type } } } = props;
     const [results, setResults] = useState([]);
     const [error, setError] = useState(null);
 
-    const fetchHotels = useCallback(location => {
+    const fetchResults = useCallback(location => {
         setError(null);
 
         axios.get(`${CORS_HACK}${YELP_SEARCH_URL}?term=${type}&location=${location}`, {
@@ -29,13 +31,13 @@ const Hotels = props => {
     const title = useMemo(() => type.charAt(0).toUpperCase() + type.slice(1) + 's', [type]);
 
     return(
-        <div id="hotels-container">
+        <div id="search-container">
             <LinkBackHome />
             <h2>Search {title}</h2>
-            <LocationForm fetchResults={fetchHotels} />
+            <LocationForm fetchResults={fetchResults} />
             <BusinessesList results={results} error={error} />
         </div>
     );
 };
 
-export default Hotels;
+export default Search;
