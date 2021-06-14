@@ -1,18 +1,17 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import { LocationForm, BusinessesList, LinkBackHome } from '../components';
-import { HEADERS, CORS_HACK } from '../utils/yelp';
+import { HEADERS, CORS_HACK, YELP_SEARCH_URL } from '../utils/yelp';
 
-const YELP_ATTRACTIONS_URL = 'https://api.yelp.com/v3/businesses/search?term=attraction';
-
-const Attractions = () => {
+const Hotels = props => {
+    const { match: { params: { type } } } = props;
     const [results, setResults] = useState([]);
     const [error, setError] = useState(null);
 
-    const fetchAttractions = useCallback(location => {
+    const fetchHotels = useCallback(location => {
         setError(null);
 
-        axios.get(`${CORS_HACK}${YELP_ATTRACTIONS_URL}&location=${location}`, {
+        axios.get(`${CORS_HACK}${YELP_SEARCH_URL}?term=${type}&location=${location}`, {
             headers: HEADERS,
         }).then(({ data }) => {
             console.log(data);
@@ -25,16 +24,18 @@ const Attractions = () => {
             }
             console.error(error);
         });
-    }, []);
+    }, [type]);
+
+    const title = useMemo(() => type.charAt(0).toUpperCase() + type.slice(1) + 's', [type]);
 
     return(
-        <div id="attractions-container">
+        <div id="hotels-container">
             <LinkBackHome />
-            <h2>Search Attractions</h2>
-            <LocationForm fetchResults={fetchAttractions} />
+            <h2>Search {title}</h2>
+            <LocationForm fetchResults={fetchHotels} />
             <BusinessesList results={results} error={error} />
         </div>
     );
 };
 
-export default Attractions;
+export default Hotels;

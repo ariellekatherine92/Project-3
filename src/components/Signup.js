@@ -66,7 +66,7 @@ const Signup = () => {
                         </div>
 
                         <div className="form-group">
-                        <label htmlFor='email'>email</label>
+                        <label htmlFor='email'>Email</label>
                             <input type="email" name="email" value={email} onChange={handleEmail} className='form-control'/>
                         </div>
 
@@ -76,7 +76,7 @@ const Signup = () => {
                         </div>
 
                         <div className="form-group">
-                        <label htmlFor='confirmPassword'>Password</label>
+                        <label htmlFor='confirmPassword'>Confirm Password</label>
                             <input type="password" name="confirmPassword" value={confirmPassword} onChange={handleConfirmPassword} className='form-control'/>
                         </div>
                         

@@ -1,3 +1,10 @@
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: blue;
+    font-weight: bold;
+}
+
 #home-container {
     display: flex;
     justify-content: space-around;
