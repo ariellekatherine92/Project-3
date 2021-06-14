@@ -1,31 +1,33 @@
 // Imports
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+// TODO need to make .env file with env vars
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const Signup = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState ('');
     const [password, setPassword] = useState ('');
-    const [confirmPassword, setconfirmPassword] = ('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
 
     const handleName = (e) => {
         setName(e.target.value);
-    }
+    };
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
-    }
+    };
 
     const handlePassword = (e) => {
         setPassword(e.target.value)
-    }
+    };
 
     const handleConfirmPassword = (e) => {
-        handleConfirmPassword(e.target.value)
-    }
+        setConfirmPassword(e.target.value)
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -83,6 +85,7 @@ const Signup = () => {
                     </form>
                     
                 </div>
+                <Link to="/login">Log In</Link>
             </div>
         </div>
     )

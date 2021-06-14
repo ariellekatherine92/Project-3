@@ -1,5 +1,6 @@
 // Imports
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from '../utils/setAuthToken';
@@ -59,6 +60,7 @@ const Login = (props) => {
                         <button type="submit" className="btn btn-primary float-right">Submit</button>
                     </form>
                 </div>
+                <Link to="/signup">Sign Up</Link>
             </div>
         </div>
     )

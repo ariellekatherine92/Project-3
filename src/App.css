@@ -2,9 +2,15 @@ html {
   position: relative;
   min-height: 100%;
 }
+
 body {
   margin-bottom: 60px; /* Margin bottom by footer height */
 }
+
+.error {
+  color: #cc0000;
+}
+
 .footer {
   position: absolute;
   bottom: 0;

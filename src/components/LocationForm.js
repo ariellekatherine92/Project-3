@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import axios from 'axios';
 
-const LocationForm = ({ fetchYelpResults }) => {
+const LocationForm = ({ fetchResults }) => {
     const [locationValue, setLocationValue] = useState('');
 
     const handleLocationChange = useCallback(e => {
@@ -11,8 +11,8 @@ const LocationForm = ({ fetchYelpResults }) => {
     const searchLocation = useCallback(e => {
         e.preventDefault();
 
-        fetchYelpResults(locationValue);
-    }, [locationValue, fetchYelpResults]);
+        fetchResults(locationValue);
+    }, [locationValue, fetchResults]);
 
     return(
         <form>

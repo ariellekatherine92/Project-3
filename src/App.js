@@ -1,45 +1,26 @@
-// Imports
-import React, { useEffect, useState, useCallback } from 'react';
+import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
-import axios from 'axios';
+// import jwt_decode from 'jwt-decode';
 // import setAuthToken from './utils/setAuthToken';
-// CSS
-import './App.css';
-// Components
-import Welcome from './components/Welcome';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Profile from './components/Profile';
-import Signup from './components/Signup';
+import { Home, Profile, Restaurants, Attractions, Hotels } from './pages';
 import Login from './components/Login';
-import About from './components/About';
-import LocationForm from './components/LocationForm';
-import BusinessesList from './components/BusinessesList';
+import Signup from './components/Signup';
+import Footer from './components/Footer';
+
+import './App.css';
 
 function App() {
-  const [yelpResults, setYelpResults] = useState([]);
-
-  const fetchYelpResults = useCallback(location => {
-    axios.get(`${'https://cors-anywhere.herokuapp.com/'}https://api.yelp.com/v3/businesses/search?term=restaurant&location=${location}`, {
-      headers: {
-        'Authorization': `Bearer oXuKoZijv8fziZTs5FxqFvo8zUC6A6I0WAathMrbRPCphprIhIyYEwXLpZxUe939iRDRkvbKbRxHKS_z-DvV-fGK0aCSSHSJCo27eto-9ym79UckJQMTodze_-DAYHYx`,
-        'Access-Control-Allow-Origin': '*',
-      },
-    }).then(({ data }) => {
-      if (Array.isArray(data?.businesses)) {
-        setYelpResults(data.businesses);
-      }
-    }).catch(err => {
-      console.error(err);
-    });
-  }, []);
-
   return (
     <div className="App">
-      {/* <Navbar  /> */}
-      <LocationForm fetchYelpResults={fetchYelpResults} />
-      <BusinessesList yelpResults={yelpResults} />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/signup" exact component={Signup} />
+        <Route path="/profile" exact component={Profile} />
+        <Route path="/restaurants" exact component={Restaurants} />
+        <Route path="/attractions" exact component={Attractions} />
+        <Route path="/hotels" exact component={Hotels} />
+      </Switch>
       <Footer />
     </div>
   );
