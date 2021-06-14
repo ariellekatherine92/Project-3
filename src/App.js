@@ -6,17 +6,6 @@ import setAuthToken from "./utils/setAuthToken";
 // CSS
 import "./App.css";
 // Components
-<<<<<<< HEAD
-import Welcome from './components/Welcome';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Profile from './components/Profile';
-import Signup from './components/Signup';
-import Login from './components/Login';
-import About from './components/About';
-import Home from './pages/Home';
-import Search from './pages/Search';
-=======
 import Home from "./pages/Home";
 import Welcome from "./components/Welcome";
 import Navbar from "./components/Navbar";
@@ -26,7 +15,6 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
 import Search from "./pages/Search";
->>>>>>> 0f69b4eecb191b0997293e2d30a1838215e2c2eb
 // Private route component
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
