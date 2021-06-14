@@ -10,8 +10,23 @@
     margin: 4px;
 }
 
+#search-container .pane {
+    background: rgba(255, 255, 255, 0.5);
+    width: fit-content;
+    display: inline-block;
+    padding: 2rem 4rem;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 1px solid #fff;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
 #search-container h2 {
+    color:rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    letter-spacing: 0.25em;
     text-align: center;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
 }
 
 #search-container form {
@@ -21,9 +36,9 @@
 }
 
 #search-container .location-input {
-    width: 50%;
+    width: 50vw;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 2rem 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;

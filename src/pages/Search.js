@@ -33,8 +33,10 @@ const Search = props => {
     return(
         <div id="search-container">
             <LinkBackHome />
-            <h2>Search {title}</h2>
-            <LocationForm fetchResults={fetchResults} />
+            <div className="pane">
+                <h2>Search {title}</h2>
+                <LocationForm fetchResults={fetchResults} />
+            </div>
             <BusinessesList results={results} error={error} />
         </div>
     );
