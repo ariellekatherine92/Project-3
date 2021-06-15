@@ -18,9 +18,11 @@ const LocationForm = ({ fetchResults }) => {
         <form>
             <input
                 type="text"
+                className="location-input"
                 onChange={handleLocationChange}
             />
             <button
+                className="search-location-button"
                 onClick={searchLocation}>
                 Search
             </button>

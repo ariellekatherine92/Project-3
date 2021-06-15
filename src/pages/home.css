@@ -6,18 +6,68 @@ h1 {
 }
 
 #home-container {
+    background-color: #772f1a;
+    background-image: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#home-container h1 {
+    font-size: 78px;
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin: 50px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    letter-spacing: .5em;
+}
+
+#home-container section {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    flex-grow: 2;
+    flex-wrap: wrap;
 }
 
 #home-container .business-type {
-    height: 200px;
-    width: 300px;
+    height: 275px;
+    width: 400px;
     cursor: pointer;
-    border: 1px solid #333;
+    margin: 18px 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fff;
+    border-radius: 12px;
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+#home-container .business-type:hover {
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 0px 0px 2px, rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+#home-container a:hover {
+    text-decoration: none;
+}
+
+.business-type h3 {
+    font-size: 52px;
+    font-weight: bold;
+}
+
+.business-type.restaurants {
+    background-image: url('https://www.elitetraveler.com/wp-content/uploads/2017/10/Hotel-Eden-La-Terrazza-scaled-e1600071873644.jpg');
+}
+
+.business-type.attractions {
+    background-image: url('https://www.smartcitiesworld.net/AcuCustom/Sitename/DAM/019/Theme_park_AdobeStock_222547272_1.jpg');
+}
+
+.business-type.hotels {
+    background-image: url('https://media-cdn.tripadvisor.com/media/photo-m/1280/18/02/5e/47/nh-palermo.jpg');
 }
