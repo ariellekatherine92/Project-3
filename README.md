@@ -24,6 +24,15 @@ Of course, in the beginning of every project everyone wants the world and everyo
 very different concepts. Below is how we narrowed down our goals to create a more cohesive flow throughout our front and back ends. 
 ![cohesive](https://github.com/ariellekatherine92/Project-3-front-end/blob/main/Photos/cohesive.png?raw=true)
 
+# Frontend Code 
+As front end developers we wanted to ensure that we had a clean user experience with as little code as possible. When we first started making our seaarch pages we realized that we could condense it down to one page and function vs. making multiple pages with three separate functions. The code snippet below shows how we used one axios call to retrieve data from all the business endpoints for each of our categories. 
+
+![pagesfunction]()
+
+We used a simple clean style for the home and search pages. In the future, as a group, we would like to build upon the styling and user experience of the design. In such a short timeframe there was not a whole lot we could do, however, we tried to keep the styling as clean as possible. The code below shows how we implimented some images behind our search links.
+
+![csshomepage]()
+![homepageimage]()
 
 
 
