@@ -63,24 +63,10 @@ function App() {
     <div className="App">
       <Switch>
         <Route path="/" exact component={Home} />
-<<<<<<< HEAD
         <Route path="/profile" exact component={Profile} />
         <Route path="/" exact component={Welcome} />
         <Route path='/login' 
                 render={ (props) => <Login {...props} user={currentUser} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} /> } />
-=======
-        <Route
-          path="/login"
-          render={(props) => (
-            <Login
-              {...props}
-              user={currentUser}
-              nowCurrentUser={nowCurrentUser}
-              setIsAuthenticated={setIsAuthenticated}
-            />
-          )}
-        />
->>>>>>> 1be9672d248ba912ce86d20ad5a5401968e41f87
         <Route path="/signup" exact component={Signup} />
         <Route path="/search/:type" component={Search} />
         <PrivateRoute path='/profile' component={ Profile } user={currentUser} handleLogout={handleLogout} />

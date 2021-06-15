@@ -42,8 +42,4 @@ const Search = props => {
     );
 };
 
-<<<<<<< HEAD
-export default Hotels;
-=======
 export default Search;
->>>>>>> 1be9672d248ba912ce86d20ad5a5401968e41f87
