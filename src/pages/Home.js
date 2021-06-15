@@ -5,7 +5,7 @@ import './home.css';
 const Home = () => {
     return (
         <div id="home-container">
-            <h1>Travel Nomad</h1>
+            <h1>Local Nomad</h1>
 
             <section>
                 <Link to="/search/restaurant">

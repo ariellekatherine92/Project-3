@@ -27,12 +27,16 @@ very different concepts. Below is how we narrowed down our goals to create a mor
 # Frontend Code 
 As front end developers we wanted to ensure that we had a clean user experience with as little code as possible. When we first started making our seaarch pages we realized that we could condense it down to one page and function vs. making multiple pages with three separate functions. The code snippet below shows how we used one axios call to retrieve data from all the business endpoints for each of our categories. 
 
-![pagesfunction]()
+![pagesfunction](https://github.com/ariellekatherine92/Project-3-front-end/blob/main/Photos/pagesfunction.png?raw=true)
 
 We used a simple clean style for the home and search pages. In the future, as a group, we would like to build upon the styling and user experience of the design. In such a short timeframe there was not a whole lot we could do, however, we tried to keep the styling as clean as possible. The code below shows how we implimented some images behind our search links.
 
-![csshomepage]()
-![homepageimage]()
+![csshomepage](https://github.com/ariellekatherine92/Project-3-front-end/blob/main/Photos/csshomepage.png?raw=true)
+![homepageimage](https://github.com/ariellekatherine92/Project-3-front-end/blob/main/Photos/homepageimage.png?raw=true)
+
+# Future Considerations 
+
+As a group we would really like to expand on this idea and polish it especially on the front end. We would like to add more features such as social media pages, blogs, comments, reviews and a location service. We would also like it to add a google api for location services and make it more phone friendly. We also would need to find a way to revise the backend so we do not have to use our work around to make api calls. Yelp does not allow api calls from the front end so we would need to impliment this on the backend.
 
 
 
