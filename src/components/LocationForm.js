@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from 'react';
-import axios from 'axios';
 
 const LocationForm = ({ fetchResults }) => {
     const [locationValue, setLocationValue] = useState('');

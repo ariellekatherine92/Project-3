@@ -6,7 +6,11 @@ import { HEADERS, CORS_HACK, YELP_SEARCH_URL } from '../utils/yelp';
 import './search.css';
 
 const Search = props => {
-    const { match: { params: { type } } } = props;
+    const { 
+        user,
+        match: { params: { type } },
+    } = props;
+
     const [results, setResults] = useState([]);
     const [error, setError] = useState(null);
 
@@ -37,7 +41,12 @@ const Search = props => {
                 <h2>Search {title}</h2>
                 <LocationForm fetchResults={fetchResults} />
             </div>
-            <BusinessesList results={results} error={error} />
+            <BusinessesList 
+                results={results} 
+                error={error} 
+                user={user}
+                businessType={type}
+            />
         </div>
     );
 };

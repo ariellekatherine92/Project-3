@@ -15,6 +15,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
 import Search from "./pages/Search";
+import Favorites from "./pages/Favorites";
 // Private route component
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -48,7 +49,6 @@ function App() {
       setIsAuthenticated(false);
     } else {
       token = jwt_decode(localStorage.getItem("jwtToken"));
-      console.log("token", token);
       setAuthToken(token); // come back to this.
       setCurrentUser(token);
     }
@@ -70,6 +70,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route
@@ -84,10 +85,26 @@ function App() {
           )}
         />
         <Route path="/signup" exact component={Signup} />
-        <Route path="/search/:type" component={Search} />
+        <Route 
+          path="/search/:type" 
+          render={props => (
+            <Search 
+              {...props}
+              user={currentUser}
+              nowCurrentUser={nowCurrentUser}
+              setIsAuthenticated={setIsAuthenticated} 
+            />
+          )}
+        />
         <PrivateRoute
           path="/profile"
           component={Profile}
+          user={currentUser}
+          handleLogout={handleLogout}
+        />
+        <PrivateRoute
+          path="/favorites"
+          component={Favorites}
           user={currentUser}
           handleLogout={handleLogout}
         />
