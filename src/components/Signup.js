@@ -1,6 +1,5 @@
 // Imports
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 // TODO need to make .env file with env vars
@@ -85,7 +84,6 @@ const Signup = () => {
                     </form>
                     
                 </div>
-                <Link to="/login">Log In</Link>
             </div>
         </div>
     )

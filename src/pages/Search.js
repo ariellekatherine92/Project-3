@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import axios from 'axios';
-import { LocationForm, BusinessesList, LinkBackHome } from '../components';
+import { LocationForm, BusinessesList } from '../components';
 import { HEADERS, CORS_HACK, YELP_SEARCH_URL } from '../utils/yelp';
 
 import './search.css';
@@ -36,7 +36,6 @@ const Search = props => {
 
     return(
         <div id="search-container">
-            <LinkBackHome />
             <div className="pane">
                 <h2>Search {title}</h2>
                 <LocationForm fetchResults={fetchResults} />

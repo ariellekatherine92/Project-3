@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { HEADERS, CORS_HACK } from '../utils/yelp';
 
+import './favorites.css';
+
 const Favorites = props => {
     const [favorites, setFavorites] = useState([]);
     const [detailFavorites, setDetailFavorites] = useState([]);
@@ -15,35 +17,48 @@ const Favorites = props => {
     }, []);
 
     useEffect(() => {
-        let newDetailFavorites = [];
+        const promises = [];
 
         favorites.forEach(({ businessId }) => {
-            axios.get(`${CORS_HACK}https://api.yelp.com/v3/businesses/${businessId}`, {
-                headers: HEADERS,
-            }).then(({ data }) => {
-                newDetailFavorites.push(data);
-            }, error => {
-                console.error(error);
+            const promise = new Promise((resolve, reject) => {
+                axios.get(`${CORS_HACK}https://api.yelp.com/v3/businesses/${businessId}`, {
+                    headers: HEADERS,
+                }).then(({ data }) => {
+                    resolve(data);
+                }, error => {
+                    reject(error);
+                });
             });
+
+            promises.push(promise);
         });
 
-        setDetailFavorites(newDetailFavorites);
+        Promise.all(promises).then(values => {
+            setDetailFavorites(values);
+        });
     }, [favorites]);
 
+    const removeFavorite = (foo, bar) => {
+        console.log(foo, bar);
+    };
+
     return (
-        <ul>
-            {detailFavorites.map(business => (
-                <li
-                    style={{ 
-                        backgroundImage: business.image_url,
-                        height: '200px',
-                        width: '200px',
-                        backgroundSize: 'cover',
-                    }}>
-                    {business.name}
-                </li>
-            ))}
-        </ul>
+        <div id="favorites-container">
+            <ul className="business-items-container">
+                {detailFavorites.map(business => (
+                    <li
+                        className="business-item"
+                        style={{ backgroundImage: 'url(business.image_url)' }}>
+                        {/* <div
+                            className="btn-remove-favorite"
+                            onClick={removeFavorite.bind(this, business.id)}>
+                            Remove Favorites
+                        </div> */}
+                        <span>{business.name}</span>
+                    </li>
+                ))}
+            </ul>
+        </div>
     );
 };
 

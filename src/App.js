@@ -70,7 +70,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar isAuth={isAuthenticated} handleLogout={handleLogout} />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route
